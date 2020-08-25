@@ -25,7 +25,7 @@ class DataToNeo4j:
     def create_relation(self, df_data):
         """建立联系"""
         tx = self.graph.begin()
-        for i, row in df_data.iterrows():
+        for _, row in df_data.iterrows():
             tx.evaluate('''
                    MERGE (a:发票名称 {property:$name})
                    MERGE (b:发票值 {property:$name2})
