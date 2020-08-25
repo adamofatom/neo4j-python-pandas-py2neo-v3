@@ -1,4 +1,4 @@
-from py2neo import Node, Graph, Relationship
+from py2neo import Node, Graph
 
 
 class DataToNeo4j:
@@ -35,13 +35,3 @@ class DataToNeo4j:
                                     'p': row['relation']})
 
         tx.commit()
-
-        # rel = Relationship(self.graph.nodes.match(label=self.invoice_name,
-        #                                           property_key='name',
-        #                                           property_value=df_data['name'][m]),
-        #                    df_data['relation'][m],
-        #                    self.graph.nodes.match(label=self.invoice_value,
-        #                                           property_key='name2',
-        #                                           property_value=df_data['name2'][m]))
-        # print(rel, m)
-        # self.graph.create(rel)
